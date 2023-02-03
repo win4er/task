@@ -8,7 +8,7 @@ using namespace std;
 void fillRandom(int* arr, int size) {
     srand(time(nullptr));
     for (int i = 0; i < size; i++) {
-        arr[i] = (rand() % 101 + rand() % 151) % 151;
+        arr[i] = rand() % 201;
     }
 }
 

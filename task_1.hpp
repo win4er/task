@@ -81,10 +81,12 @@ int countMin(int* ar, int size) {
 
 int countDig(int* ar, int size, int indEl) {
     int count = 0;
+
     for (int i = 0; i < size; i++) {
         if (ar[indEl] == ar[i]) {
             count += 1;
         }
     }
+
     return count;
 }

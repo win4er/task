@@ -4,4 +4,5 @@ int main() {
     fillRandom(ar, 1000);
     BubbleSort2(ar, 1000);
     printArr(ar, 1000);
+    return 0;
 }

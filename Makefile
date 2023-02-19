@@ -1,5 +1,5 @@
 all : main.o arraywork.o statarray.o sorts.o testsorts.o timetest.o
-	g++ main.o arraywork.o statarray.o sorts.o testsorts.o tiometest.o
+	g++ main.o arraywork.o statarray.o sorts.o testsorts.o timetest.o
 
 main.o : main.c
 	g++ -c main.c

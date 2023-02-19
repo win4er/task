@@ -1,23 +1,26 @@
 #include "timetest.h"
 
+void row_info() {
+    std::cout << "\tmerge_sort\tcount_sort\tselection_sort\tinsertion_sort\tquick_sort\tbubblesort" << std::endl;
+}
+
 void time_test(int step, int min, int max) {
     int SIZE = min - step;
     bool flag = 1; 
     static int *ar = new int[SIZE];
    
     while (SIZE != max) {
+        
+        std::cout << SIZE << "\t";
+
         SIZE += step;
         ar = new int[SIZE];
-        std::cout << std::endl;
-        std::cout << __func__ << std::endl;
 
         std::chrono::time_point<std::chrono::high_resolution_clock> start;
         std::chrono::time_point<std::chrono::high_resolution_clock> end;
         std::chrono::duration<double> diff;
 
 
-        std::cout << "[merge_sort]" << "\t\t";
-        std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
 
@@ -26,13 +29,10 @@ void time_test(int step, int min, int max) {
         end = std::chrono::high_resolution_clock::now();
         
         diff = end - start;
-        std::cout << "[TIME]:\t" << diff.count() << "\n";        
+        std::cout << diff.count() << "\t";        
 
 
 
-
-        std::cout << "[count_sort]" << "\t\t";
-        std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
 
@@ -40,13 +40,10 @@ void time_test(int step, int min, int max) {
         count_sort(ar, SIZE, 0, 999);
         end = std::chrono::high_resolution_clock::now();
 
-        std::cout << "[TIME]:\t" << diff.count() << "\n";
+        std::cout << diff.count() << "\t";
         
 
 
-
-        std::cout << "[selection_sort]" << "\t";
-        std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
 
@@ -55,13 +52,10 @@ void time_test(int step, int min, int max) {
         end = std::chrono::high_resolution_clock::now();
 
         diff = end - start;
-        std::cout << "[TIME]:\t" << diff.count() << "\n";
+        std::cout << diff.count() << "\t";
 
 
 
-
-        std::cout << "[insertion_sort]" << "\t";
-        std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
 
@@ -70,13 +64,10 @@ void time_test(int step, int min, int max) {
         end = std::chrono::high_resolution_clock::now();
 
         diff = end - start;
-        std::cout << "[TIME]:\t" << diff.count() << "\n";
+        std::cout << diff.count() << "\t";
 
 
 
-
-        std::cout << "[quick_sort]" << "\t\t";
-        std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
 
@@ -84,13 +75,10 @@ void time_test(int step, int min, int max) {
         quickSort(ar, SIZE);
         end = std::chrono::high_resolution_clock::now();
 
-        std::cout << "[TIME]:\t" << diff.count() << "\n";
+        std::cout << diff.count() << "\t";
 
 
 
-
-        std::cout << "[bubble_sort]" << "\t\t";
-        std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
 
@@ -98,7 +86,7 @@ void time_test(int step, int min, int max) {
         bubble_sort(ar, SIZE);
         end = std::chrono::high_resolution_clock::now();
 
-        std::cout << "[TIME]:\t" << diff.count() << "\n";
+        std::cout << diff.count() << "\n";
         
 
         delete[] ar;

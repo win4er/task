@@ -6,5 +6,6 @@
 #include "sorts.h"
 
 void time_test(int, int, int);
+void row_info();
 
 #endif

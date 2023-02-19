@@ -16,7 +16,7 @@ void time_test(int step, int min, int max) {
         std::chrono::duration<double> diff;
 
 
-        std::cout << "[merge_sort]" << "\t";
+        std::cout << "[merge_sort]" << "\t\t";
         std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
@@ -31,7 +31,7 @@ void time_test(int step, int min, int max) {
 
 
 
-        std::cout << "[count_sort]" << "\t";
+        std::cout << "[count_sort]" << "\t\t";
         std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
@@ -75,7 +75,7 @@ void time_test(int step, int min, int max) {
 
 
 
-        std::cout << "[quick_sort]" << "\t";
+        std::cout << "[quick_sort]" << "\t\t";
         std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);
@@ -89,7 +89,7 @@ void time_test(int step, int min, int max) {
 
 
 
-        std::cout << "[bubble_sort]" << "\t";
+        std::cout << "[bubble_sort]" << "\t\t";
         std::cout << "[SIZE]:\t" << SIZE << "\t";
 
         random_Fill_ar(ar, SIZE, 0, 999);

@@ -2,7 +2,9 @@
 #define _timetest_h_
 
 #include<chrono>
+#include<iostream>
+#include "sorts.h"
 
-void time_test(int, int, int, int);
+void time_test(int, int, int);
 
 #endif

@@ -1,5 +1,9 @@
 #include "testsorts.h"
 
+обычно вместо complete пишут OK или GOOD
+а вместо wrong - BAD 
+это не принципиально просто привычка чтения вывода тестов....
+
 void test_BubbleSort(){
 	std::cout << "\t---" << __func__ << "---" << std::endl;
 	int count_test = 1;

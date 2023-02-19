@@ -34,7 +34,7 @@ void insertion_sort(int *ar, int size){
 }
 
 void count_sort(int *ar, int size, int min, int max){
-    int null_ar[max];
+    int null_ar[max]; это реализацию видел у Дмитрия.... один в один.... это ничего страшного
     for (int i = min; i <= max; i++){
         null_ar[i] = 0;
     }
@@ -90,13 +90,9 @@ static void merge(int* ar, int size, int central) {
     while (left < central && right < size) {
         while(ar[left] <= ar[right] && left < central) {
             arTemp[indexTemp++] = ar[left++];
-//            left++;
-//            indexTemp++;
         }
         while(ar[left] > ar[right] && right < size) {
-            arTemp[indexTemp] = ar[right];
-            indexTemp++;
-            right++;
+            arTemp[indexTemp++] = ar[right++];
         }
     }
 
@@ -107,7 +103,9 @@ static void merge(int* ar, int size, int central) {
         arTemp[indexTemp++] = ar[right++];
     }
 
-    memcpy(ar, arTemp, size * sizeof(int));
+    memcpy(ar, arTemp, size * sizeof(int)); -- почему не читаете чужой код?? вот хорошая функция которая может заменить 
+					в сортировки подсчётом дурацкий цикл обнуления массива
+					for (int i = 0; i < size; ar[i++] = 0);
 
     delete [] arTemp;
 }

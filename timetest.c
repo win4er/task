@@ -1,17 +1,18 @@
 #include "timetest.h"
 
+
 void time_test(int step, int min, int max) {
     int SIZE = min - step;
     bool flag = 1; 
-    static int *ar = new int[SIZE];
+    static int *ar = new int[SIZE]; -- зачем статик?: здесь выделил память
    
     while (SIZE != max) {
         SIZE += step;
-        ar = new int[SIZE];
+        ar = new int[SIZE]; потом здесь выделил память... и в итоге у тебя будет утечка памяти потому что потерял указатель на ранее выделенную память.....
         std::cout << std::endl;
-        std::cout << __func__ << std::endl;
+        std::cout << __func__ << std::endl; это конечно хорошо только не понятно зачем?:..
 
-        std::chrono::time_point<std::chrono::high_resolution_clock> start;
+        std::chrono::time_point<std::chrono::high_resolution_clock> start; такие переменные лучше выносить за тело цикла
         std::chrono::time_point<std::chrono::high_resolution_clock> end;
         std::chrono::duration<double> diff;
 
